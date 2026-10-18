@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef's Burger Kitchen - Cooking Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <!-- Header & Stats Bar -->
+        <header>
+            <h1>🍳 Chef's Cooking Kitchen</h1>
+            <div class="stats-bar">
+                <div class="stat-card">⏱️ Time Left: <span id="timer-val">60</span>s</div>
+                <div class="stat-card">⭐ Score: <span id="score-val">0</span></div>
+            </div>
+            <!-- Current Order Slip -->
+            <div class="order-slip">
+                <p>Current Customer Order:</p>
+                <div id="recipe-display" class="recipe-steps">Loading order...</div>
+                <!-- Customer Patience Progress Bar -->
+                <div class="patience-track">
+                    <div id="patience-bar" class="patience-fill"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Gameplay Area -->
+        <div class="kitchen-floor">
+            
+            <!-- Pantry / Ingredient Selection Panel -->
+            <div class="pantry-panel">
+                <h3>Click Ingredients to Build:</h3>
+                <div class="ingredients-grid">
+                    <button class="ingredient-btn" data-ingredient="bun-bottom">🍞 Bottom Bun</button>
+                    <button class="ingredient-btn" data-ingredient="patty">🥩 Beef Patty</button>
+                    <button class="ingredient-btn" data-ingredient="cheese">🧀 Cheddar Cheese</button>
+                    <button class="ingredient-btn" data-ingredient="lettuce">🥬 Fresh Lettuce</button>
+                    <button class="ingredient-btn" data-ingredient="bun-top">🍞 Top Bun</button>
+                </div>
+                <!-- Control Actions -->
+                <div class="action-row">
+                    <button id="serve-btn" class="control-btn serve-btn">🛎️ Serve Burger</button>
+                    <button id="trash-btn" class="control-btn trash-btn">🗑️ Trash Plate</button>
+                </div>
+            </div>
+
+            <!-- Cooking & Assembly Plate Panel -->
+            <div class="plate-panel">
+                <h3>Assembly Plate</h3>
+                <div class="plate">
+                    <!-- Visual burger layers render inside here -->
+                    <div id="burger-mesh" class="burger-mesh-container"></div>
+                    <div class="empty-plate-shadow"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- End Game Overlay Screen (Hidden by Default until 0s) -->
+        <div id="game-overlay" class="overlay hidden">
+            <div class="overlay-content">
+                <h2 id="overlay-title">⏱️ Time's Up, Chef!</h2>
+                <p id="overlay-msg">You finished your shift!</p>
+                <button id="start-btn" class="action-start-btn">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
